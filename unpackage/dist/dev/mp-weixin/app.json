@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/createActive/createActive",
+    "pages/activeDetail/activeDetail"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "约球么",
+    "navigationBarBackgroundColor": "#f3f4f6",
+    "backgroundColor": "#f3f4f6"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "约球么需使用您的定位信息查找附近的球场~"
+    }
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.9",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "usingComponents": {}
+}

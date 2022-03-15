@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "约球么",
+  "usingComponents": {
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "u-swiper": "/uni_modules/uview-ui/components/u-swiper/u-swiper",
+    "u-sticky": "/uni_modules/uview-ui/components/u-sticky/u-sticky",
+    "u-subsection": "/uni_modules/uview-ui/components/u-subsection/u-subsection",
+    "u-tag": "/uni_modules/uview-ui/components/u-tag/u-tag",
+    "u-skeleton": "/uni_modules/uview-ui/components/u-skeleton/u-skeleton",
+    "u-empty": "/uni_modules/uview-ui/components/u-empty/u-empty",
+    "u-modal": "/uni_modules/uview-ui/components/u-modal/u-modal"
+  }
+}

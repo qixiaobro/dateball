@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "创建活动",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u--form": "/uni_modules/uview-ui/components/u--form/u--form",
+    "u-form-item": "/uni_modules/uview-ui/components/u-form-item/u-form-item",
+    "u--input": "/uni_modules/uview-ui/components/u--input/u--input",
+    "u-switch": "/uni_modules/uview-ui/components/u-switch/u-switch",
+    "u--textarea": "/uni_modules/uview-ui/components/u--textarea/u--textarea",
+    "u-picker": "/uni_modules/uview-ui/components/u-picker/u-picker",
+    "u-datetime-picker": "/uni_modules/uview-ui/components/u-datetime-picker/u-datetime-picker",
+    "u-modal": "/uni_modules/uview-ui/components/u-modal/u-modal"
+  }
+}
