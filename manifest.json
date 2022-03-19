@@ -50,22 +50,22 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx0a18a4bfe82ea988",
+        "appid" : "wxdd0cc70e9feb2eeb",
         "setting" : {
             "urlCheck" : false
         },
         "usingComponents" : true,
-		"permission" : {
-		    "scope.userLocation" : {
-		        "desc" : "约球么需使用您的定位信息查找附近的球场~"
-		    }
-		},
-		"plugins": {
-		        "chooseLocation": {
-		        "version": "1.0.9",
-		        "provider": "wx76a9a06e5b4e693e"
-		        }
-		}
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "球场见需使用您的定位信息查找附近的球场~"
+            }
+        },
+        "plugins" : {
+            "chooseLocation" : {
+                "version" : "1.0.9",
+                "provider" : "wx76a9a06e5b4e693e"
+            }
+        }
     },
     "mp-alipay" : {
         "usingComponents" : true

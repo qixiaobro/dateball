@@ -1,39 +1,40 @@
-export default{
-	data(){
-		return{
-			location: {
-				longitude: '',
-				latitude: ''
-			},
-			
+export default {
+	data() {
+		return {
+			activityStatus: ['召集中', '已达标', '已满员', '待开始', '进行中', '已取消', '已结束'],
+			activityStatusColor: ['warning', 'success', 'success', 'warning', 'success', 'info', 'info'],
 		}
 	},
-	methods:{
-		getLocationText(address){
-			return `${address.street_number||address.name}`
+	methods: {
+		transStatusLabel(status) {
+			return this.activityStatus[status]
 		},
-		// wxLogin(){
-		// 	console.log(1)
-		// 	uni.login({
-		// 	  provider: 'weixin',
-		// 	  success: function (loginRes) {
-		// 	    console.log(loginRes)
-		// 	    // // 获取用户信息
-
-		// 	  }
-		// 	});
-		// },
-		customrLogin(){
-			uni.getUserProfile({
-			  provider: 'weixin',
-			  desc:'约球么需获取您的信息用于登录～',
-			  success: function (infoRes) {
-			    console.log(infoRes);
-			  },
-			  fail:function(err){
-			  	console.log(err)
-			  }
-			});
-		}
+		transStatusLabelColor(status) {
+			return this.activityStatusColor[status]
+		},
+		transActivityType(label) {
+			let icon = ''
+			switch (label) {
+				case '篮球':
+					icon = '🏀'
+					break
+				case '足球':
+					icon = '⚽️'
+					break
+				case '排球':
+					icon = '🏐️'
+					break
+				case '羽毛球':
+					icon = '🏸️'
+					break
+				case '乒乓球':
+					icon = '🏓️'
+					break
+				case '网球':
+					icon = '🎾'
+					break
+			}
+			return icon
+		},
 	}
 }

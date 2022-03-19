@@ -28,6 +28,10 @@ module.exports = (vm) => {
 	uni.$u.http.interceptors.response.use((response) => { /* 对响应成功做点什么 可使用async await 做异步操作*/
 		const data = response.data
 		if (data.status !== 200) { 
+			uni.showToast({
+				title:data.msg,
+				icon:'none'
+			})
 			return Promise.reject(data)
 		}
 		return Promise.resolve(data)

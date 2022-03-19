@@ -3,7 +3,8 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "约球么"
+				"navigationBarTitleText": "球场见",
+				"enablePullDownRefresh":true
 			}
 		}
 	    ,{
@@ -20,6 +21,25 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "活动详情",
+                "enablePullDownRefresh": false,
+				"enablePullDownRefresh":true
+            }
+            
+        }
+        ,{
+            "path" : "pages/authPage/authPage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "授权",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/link/link",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "球场见",
                 "enablePullDownRefresh": false
             }
             
@@ -27,7 +47,7 @@
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "约球么",
+		"navigationBarTitleText": "球场见",
 		"navigationBarBackgroundColor": "#f3f4f6",
 		"backgroundColor": "#f3f4f6"
 	}

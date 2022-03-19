@@ -22,8 +22,22 @@
                 {
                     "name": "活动详情",
                     "pathName": "pages/activeDetail/activeDetail",
+                    "query": "id=15",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "授权",
+                    "pathName": "pages/authPage/authPage",
                     "query": "",
-                    "scene": null,
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "解析而为， ",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": 1011,
                     "launchMode": "default"
                 }
             ]

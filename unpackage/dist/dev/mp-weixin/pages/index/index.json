@@ -1,5 +1,6 @@
 {
-  "navigationBarTitleText": "约球么",
+  "navigationBarTitleText": "球场见",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
     "u-swiper": "/uni_modules/uview-ui/components/u-swiper/u-swiper",
@@ -8,6 +9,7 @@
     "u-tag": "/uni_modules/uview-ui/components/u-tag/u-tag",
     "u-skeleton": "/uni_modules/uview-ui/components/u-skeleton/u-skeleton",
     "u-empty": "/uni_modules/uview-ui/components/u-empty/u-empty",
+    "u-back-top": "/uni_modules/uview-ui/components/u-back-top/u-back-top",
     "u-modal": "/uni_modules/uview-ui/components/u-modal/u-modal"
   }
 }

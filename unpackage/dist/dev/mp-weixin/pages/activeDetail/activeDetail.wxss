@@ -40,6 +40,7 @@
   padding: 20rpx;
   box-sizing: border-box;
   margin-top: 20rpx;
+  margin-bottom: 20rpx;
   position: relative;
 }
 .page-activedetail-wrap .active-detail-info-box .active-line1.data-v-226c5166 {
@@ -71,16 +72,15 @@
 }
 .page-activedetail-wrap .active-detail-info-box .active-time.data-v-226c5166,
 .page-activedetail-wrap .active-detail-info-box .active-people.data-v-226c5166,
-.page-activedetail-wrap .active-detail-info-box .active-address.data-v-226c5166 {
+.page-activedetail-wrap .active-detail-info-box .active-address.data-v-226c5166,
+.page-activedetail-wrap .active-detail-info-box .active-gym.data-v-226c5166 {
   width: 660rpx;
-  height: 40rpx;
   color: #606266;
   font-size: 28rpx;
   margin-bottom: 8rpx;
 }
 .page-activedetail-wrap .active-detail-info-box .active-remark.data-v-226c5166 {
   width: 660rpx;
-  height: 80rpx;
   line-height: 40rpx;
   color: #606266;
   font-size: 28rpx;
@@ -139,6 +139,11 @@
 .page-activedetail-wrap .active-detail-info-box .join-item .out.data-v-226c5166 {
   color: #f56c6c;
 }
+.page-activedetail-wrap .active-detail-info-box .join-remark.data-v-226c5166 {
+  width: 660rpx;
+  color: #c0c4cc;
+  font-size: 26rpx;
+}
 .page-activedetail-wrap .footer-btn-box.data-v-226c5166 {
   width: 700rpx;
   position: fixed;
@@ -160,5 +165,8 @@
 }
 .page-activedetail-wrap .footer-btn-box.data-v-226c5166 .u-button {
   margin-left: 20rpx !important;
+}
+.page-activedetail-wrap .slot-content.data-v-226c5166 {
+  text-align: left;
 }
 

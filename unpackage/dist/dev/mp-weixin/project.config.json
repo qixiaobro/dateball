@@ -22,9 +22,9 @@
         "uploadWithSourceMap": true,
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": false,
-        "useApiHook": false,
-        "useApiHostProcess": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -42,7 +42,7 @@
     },
     "compileType": "miniprogram",
     "libVersion": "",
-    "appid": "wx0a18a4bfe82ea988",
+    "appid": "wxdd0cc70e9feb2eeb",
     "projectname": "ball",
     "condition": {
         "search": {

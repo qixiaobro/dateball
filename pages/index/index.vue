@@ -3,39 +3,58 @@
 		<view class="localtion-box" @click="chooseLocation" v-if="currentLocaltionTxt">{{currentLocaltionTxt}}
 			<u-icon name="arrow-down-fill" color="$u-content-color" size="16"></u-icon>
 		</view>
-		<u-swiper :list="list3" indicator indicatorMode="line" circular></u-swiper>
+		<u-swiper :list="swipers" indicator indicatorMode="line" circular keyName="img" :loading="swiperLoading"
+			@click="handleSwiperClick"></u-swiper>
 		<u-sticky offset-top="0rpx" zIndex="10">
 			<u-subsection :list="list" :current="current" @change="sectionChange" fontSize="16" bold></u-subsection>
 		</u-sticky>
 
 		<view class="active-list-box" v-show="current===0">
 			<template v-if="mineActives.length>0">
-				<view class="active-card" v-for="(item, index) in mineActives" :key="index">
+				<view class="active-card" v-for="(item, index) in mineActives" :key="index"
+					@click="handleCheckActiveDetail(item.activity_id)">
 					<view class="active-info-box">
-						<view class="active-type">🏀</view>
+						<view class="active-type">{{transActivityType(item.activity.cate_name)}}</view>
 						<view class="active-info">
-							<view class="active-name">周日下午软二球场打球</view>
-							<view class="active-time">时间：2020/03/10 10:00</view>
-							<view class="active-people">人数：5/10人</view>
-							<view class="active-address">
-								地址：福建省厦门市软件园二期篮球场
+							<view class="active-name">{{item.activity.activity_name}}</view>
+							<view class="active-time">开始时间：<span
+									style="color:#f9ae3d">{{transTime(true,item.activity.start_time*1000)}}</span>
+							</view>
+							<view class="active-people">人数：
+								<template v-if="item.activity.down_people_num===item.activity.up_people_num">
+									{{item.activity.down_people_num}}
+								</template>
+								<template v-else>
+									{{item.activity.down_people_num}} ~ {{item.activity.up_people_num}}
+								</template>
+								人 当前：{{item.activity.join_people}}人
+							</view>
+							<view class="active-gym">
+								场馆：{{splitAddress(item.activity.address).name}}
 							</view>
 						</view>
 					</view>
+					<view class="active-address">
+						地址：{{splitAddress(item.activity.address).address}}
+					</view>
 					<view class="divide"></view>
 					<view class="control-box">
-						<button class="u-reset-button btn">地址导航</button>
+						<button class="u-reset-button btn"
+							@click="openLocation(item.activity.longitude,item.activity.latitude)">地址导航</button>
 						<view class="align-divide"></view>
-						<button class="u-reset-button btn" @click="handleCheckActiveDetail">查看详情</button>
+						<button class="u-reset-button btn"
+							@click="handleCheckActiveDetail(item.activity_id)">查看详情</button>
 						<view class="align-divide"></view>
-						<button class="u-reset-button btn">活动分享</button>
+						<button class="u-reset-button btn" open-type="share"
+							@click="share(item.activity.activity_name,item.activity_id,item.activity.cate_name)">活动分享</button>
 					</view>
 					<!--活动状态-->
 					<view class="active-status">
-						<u-tag text="待开始" plain type="warning"></u-tag>
+						<u-tag :text="transStatusLabel(item.activity.status)" plain
+							:type="transStatusLabelColor(item.activity.status)"></u-tag>
 					</view>
 					<!--活动归属-->
-					<view class="active-from">
+					<view class="active-from" v-if="item.is_create===1">
 						<u-icon size="24" name="account-fill" color="#3c9cff"></u-icon>
 					</view>
 				</view>
@@ -55,32 +74,49 @@
 		</view>
 		<view class="active-list-box" v-show="current===1">
 			<template v-if="nearByActives.length>0">
-				<view class="active-card" v-for="(item, index) in nearByActives" :key="index">
+				<view class="active-card" v-for="(item, index) in nearByActives" :key="index"
+					@click="handleCheckActiveDetail(item.id)">
 					<view class="active-info-box">
-						<view class="active-type">🏀</view>
+						<view class="active-type">{{transActivityType(item.cate_name)}}</view>
 						<view class="active-info">
-							<view class="active-name">周日下午软二球场打球</view>
-							<view class="active-time">时间：2020/03/10 10:00</view>
-							<view class="active-people">人数：5/10人</view>
-							<view class="active-address">
-								地址：福建省厦门市软件园二期篮球场
+							<view class="active-name">{{item.activity_name}}</view>
+							<view class="active-time">活动时间：{{transTime(true,item.start_time*1000)}}</view>
+							<view class="active-people">人数：
+								<template v-if="item.down_people_num===item.up_people_num">
+									{{item.down_people_num}}
+								</template>
+								<template v-else>
+									{{item.down_people_num}} ~ {{item.up_people_num}}
+								</template>
+								人 当前：{{item.join_people}}人
+							</view>
+							<view class="active-time" style="width:550rpx">参与截止时间：<span
+									style="color:#f9ae3d">{{transTime(true,item.deadline_time*1000)}}</span></view>
+							<view class="active-gym">
+								场馆：{{splitAddress(item.address).name}}
 							</view>
 						</view>
 					</view>
+					<view class="active-address">
+						地址：{{splitAddress(item.address).address}}
+					</view>
 					<view class="divide"></view>
 					<view class="control-box">
-						<button class="u-reset-button btn">地址导航</button>
+						<button class="u-reset-button btn"
+							@click="openLocation(item.longitude,item.latitude)">地址导航</button>
 						<view class="align-divide"></view>
-						<button class="u-reset-button btn">查看详情</button>
+						<button class="u-reset-button btn" @click="handleCheckActiveDetail(item.id)">查看详情</button>
 						<view class="align-divide"></view>
-						<button class="u-reset-button btn">活动分享</button>
+						<button class="u-reset-button btn" open-type="share"
+							@click="share(item.activity_name,item.id,item.cate_name)">活动分享</button>
 					</view>
 					<!--活动状态-->
 					<view class="active-status">
-						<u-tag text="待开始" plain type="warning"></u-tag>
+						<u-tag :text="transStatusLabel(item.status)" plain :type="transStatusLabelColor(item.status)">
+						</u-tag>
 					</view>
 					<!--活动归属-->
-					<view class="active-from">
+					<view class="active-from" v-if="item.is_create===1">
 						<u-icon size="24" name="account-fill" color="#3c9cff"></u-icon>
 					</view>
 				</view>
@@ -99,13 +135,15 @@
 			</u-empty>
 		</view>
 
+		<official-account></official-account>
+		<u-back-top :scroll-top="scrollTop"></u-back-top>
 
 		<view class="footer-btn-box">
-			<button v-if="!hasUserInfo" class="u-reset-button create-btn" open-type="getUserInfo" @click="getUserInfo">创建活动</button>
+			<button v-if="!hasUserInfo" class="u-reset-button create-btn" @click="handleAuth">创建活动</button>
 			<button v-else class="u-reset-button create-btn" @click="handleCreateActive">创建活动</button>
 		</view>
 
-		<u-modal :show="getLocationShow" title="提示" showCancelButton content='约球么需要获取您的定位信息从而获取附近活动呦～'
+		<u-modal :show="getLocationShow" title="提示" showCancelButton content='球场见需要获取您的定位信息从而获取附近活动呦～'
 			@cancel="cancelOpenSetting" @confirm="confirmOpenSetting">
 		</u-modal>
 	</view>
@@ -115,7 +153,13 @@
 	import {
 		MAP_KEY,
 		wxlogin,
-		setLocaltion
+		setLocaltion,
+		transTime,
+		splitAddress,
+		openLocation,
+		getHasUserInfo,
+		imgParse,
+		getSwiper
 	} from '@/utils/common.js'
 	import {
 		mineActiveList,
@@ -123,7 +167,8 @@
 	} from '@/api/actives.js'
 	import {
 		getStorageSync,
-		setStorageSync
+		setStorageSync,
+		removeStorageSync
 	} from '@/utils/local.js'
 	const QQMapWX = require('../../utils/qqmap-wx-jssdk.js')
 	const chooseLocation = requirePlugin('chooseLocation');
@@ -134,11 +179,7 @@
 		data() {
 			return {
 				currentLocaltionTxt: '',
-				list3: [
-					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
-				],
+				swipers: [],
 				list: ['我的活动', '附近活动'],
 				current: 0,
 				mineActives: [], //我的活动
@@ -150,39 +191,57 @@
 				mineNoMore: false,
 				nearByNoMore: false,
 				getLocationShow: false,
-				userInfo:'',
-				hasUserInfo:false,
+				userInfo: '',
+				hasUserInfo: false,
+				shareTitle: '',
+				shareId: '',
+				shareType: '',
+				isLogin: false,
+				swiperLoading: true,
+				scrollTop: 0,
 			}
 		},
 		async onLoad() {
 			const res = await wxlogin()
+			this.swiperLoading = true
 			if (res) {
+				this.isLogin = true
+				this.swipers = await getSwiper()
+				this.swiperLoading = false
 				this.loadMineActives()
+				this.getHasUserInfo()
 			}
 			this.getUserWxSetting()
-			const userInfo = getStorageSync('userInfo')
-			if(userInfo){
-				this.hasUserInfo = true
-			}
+		},
+		onPageScroll(e) {
+			this.scrollTop = e.scrollTop;
 		},
 		onShow() {
 			const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
 			if (location) {
 				this.currentLocaltionTxt = this.getLocationText(location)
 				setLocaltion(location.longitude, location.latitude)
-				this.page2 = 0
-				this.nearByActives = []
-				if (this.current === 1) {
-					this.loadNearByActives()
-				}
+				this.refreshList()
 			}
 			if (this.getLocationShow) {
 				this.getLocation()
+			}
+			if (this.isLogin && !this.hasUserInfo) {
+				this.getHasUserInfo()
+			}
+			const refresh = getStorageSync('homeRefresh')
+			if (refresh) {
+				this.refreshList()
+				removeStorageSync('homeRefresh')
 			}
 		},
 		onUnload() {
 			// 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
 			chooseLocation.setLocation(null);
+		},
+		onPullDownRefresh() {
+			this.refreshList()
+			uni.stopPullDownRefresh();
 		},
 		onReachBottom() {
 			if (this.current === 0) {
@@ -197,6 +256,36 @@
 				} else {
 					this.loadNearByActives()
 				}
+			}
+		},
+		onShareAppMessage(res) {
+			if (res.from === 'button') {
+				const imageUrl = imgParse(this.shareType)
+				return {
+					title: this.shareTitle,
+					path: `pages/activeDetail/activeDetail?id=${this.shareId}`,
+					imageUrl
+				}
+			}
+			return {
+				title: '快来！我们球场见',
+				path: `pages/index/index`,
+				imageUrl: 'https://img30.360buyimg.com/pop/jfs/t1/220029/19/15263/78063/62358776Ebb80152b/86d3b1ae5e07b584.png'
+			}
+		},
+		onShareTimeline(res) {
+			if (res.from === 'button') {
+				const imageUrl = imgParse(this.shareType)
+				return {
+					title: this.shareTitle,
+					path: `pages/activeDetail/activeDetail?id=${this.shareId}`,
+					imageUrl
+				}
+			}
+			return {
+				title: '快来！我们球场见',
+				path: `pages/index/index`,
+				imageUrl: 'https://img30.360buyimg.com/pop/jfs/t1/220029/19/15263/78063/62358776Ebb80152b/86d3b1ae5e07b584.png'
 			}
 		},
 		methods: {
@@ -281,7 +370,7 @@
 			getLocation() {
 				const that = this
 				uni.getLocation({
-					type: 'wgs84',
+					type: 'gcj02',
 					isHighAccuracy: true,
 					success(location) {
 						setLocaltion(location.longitude, location.latitude)
@@ -310,7 +399,7 @@
 				});
 			},
 			chooseLocation() {
-				const referer = '外卖券天天领取'; //调用插件的app的名称
+				const referer = '我们球场见'; //调用插件的app的名称
 				const location = JSON.stringify(getStorageSync('location'))
 				const category = '篮球场,足球场,网球场,排球场';
 
@@ -335,35 +424,92 @@
 				})
 			},
 			handleCheckActiveDetail(id) {
+				console.log(id)
 				uni.navigateTo({
-					url: '../activeDetail/activeDetail'
+					url: `../activeDetail/activeDetail?id=${id}`
 				})
 			},
-			getUserInfo(e) {
-				const that = this
-				uni.getUserProfile({
-					provider: 'weixin',
-					desc: '用于创建活动',
-					success: async function(infoRes) {
-						that.hasUserInfo = true
-						that.userInfo = infoRes
-						setStorageSync('userInfo',infoRes)
-						
-						const res = await wxlogin(infoRes.iv,infoRes.encryptedData)
-						if(res){
-							that.handleCreateActive()
-						}
-					},
-					fail: function(err) {
-						uni.showToast({
-							title:'约球么需要获取您的头像、昵称～',
-							icon:'none',
-							duration:1500
+			getLocationText(address) {
+				return `${address.street_number||address.name}`
+			},
+			transTime(flag, value) {
+				return transTime(flag, value)
+			},
+			splitAddress(e) {
+				return splitAddress(e)
+			},
+			refreshList() {
+				if (this.current === 0) {
+					this.page1 = 0
+					this.mineActives = []
+					this.loadMineActives()
+				} else if (this.current === 1) {
+					this.page2 = 0
+					this.nearByActives = []
+					this.loadNearByActives()
+				}
+			},
+			openLocation(longitude, latitude) {
+				openLocation({
+					longitude,
+					latitude
+				})
+			},
+			async getHasUserInfo() {
+				const res = await getHasUserInfo()
+				if (res.data.is_complete === 1 && res.data.phone) {
+					setStorageSync('phone',res.data.phone)
+					this.hasUserInfo = true
+				}
+			},
+			handleAuth() {
+				uni.navigateTo({
+					url: '../authPage/authPage?to=../createActive/createActive'
+				})
+			},
+			share(title, id, type) {
+				this.shareTitle = title
+				this.shareId = id
+				this.shareType = type
+			},
+			handleSwiperClick(index) {
+				const {
+					app_id,
+					link,
+					link_type
+				} = this.swipers[index]
+				switch (link_type) {
+					case "1":
+						break;
+					case "2":
+						uni.navigateTo({
+							url: link
 						})
-					}
-				});
+						break
+					case "3":
+						uni.navigateTo({
+							url: `../link/link?link=${link}`
+						})
+						break
+					case "4":
+						wx.navigateToMiniProgram({
+							appId: app_id,
+							path: link,
+							extraData: {},
+							success(res) {
+								// 打开成功
+							},
+							fail(err) {
+								uni.showToast({
+									title: err.message,
+									icon: 'none',
+									duration: err000
+								})
+							}
+						})
+						break
+				}
 			}
-
 		}
 	}
 </script>
@@ -449,7 +595,7 @@
 							margin-bottom: 8rpx;
 						}
 
-						.active-address {
+						.active-gym {
 							display: flex;
 							width: 500rpx;
 							color: $u-content-color;
@@ -457,6 +603,15 @@
 							margin-bottom: 8rpx;
 						}
 					}
+				}
+
+				.active-address {
+					display: flex;
+					width: 640rpx;
+					color: $u-content-color;
+					font-size: 28rpx !important;
+					margin-bottom: 8rpx;
+					margin-left: 20rpx;
 				}
 
 				.divide {
