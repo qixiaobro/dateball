@@ -40,13 +40,13 @@
 					<view class="divide"></view>
 					<view class="control-box">
 						<button class="u-reset-button btn"
-							@click="openLocation(item.activity.longitude,item.activity.latitude)">地址导航</button>
+							@click.stop="openLocation(item.activity.longitude,item.activity.latitude)">地址导航</button>
 						<view class="align-divide"></view>
 						<button class="u-reset-button btn"
-							@click="handleCheckActiveDetail(item.activity_id)">查看详情</button>
+							@click.stop="handleCheckActiveDetail(item.activity_id)">查看详情</button>
 						<view class="align-divide"></view>
 						<button class="u-reset-button btn" open-type="share"
-							@click="share(item.activity.activity_name,item.activity_id,item.activity.cate_name)">活动分享</button>
+							@click.stop="share(item.activity.activity_name,item.activity_id,item.activity.cate_name)">活动分享</button>
 					</view>
 					<!--活动状态-->
 					<view class="active-status">
@@ -68,7 +68,7 @@
 					</u-skeleton>
 				</view>
 			</template>
-			<u-empty v-if="!loading&&mineActives.length===0" mode="list"
+			<u-empty v-if="!loading&&mineActives.length===0" mode="list" style="min-height: calc(100vh - 400rpx);"
 				:icon="require('../../static/assets/icon/acitve-empty.png')" iconSize="90" text="暂无活动,快去创建吧～">
 			</u-empty>
 		</view>
@@ -103,12 +103,12 @@
 					<view class="divide"></view>
 					<view class="control-box">
 						<button class="u-reset-button btn"
-							@click="openLocation(item.longitude,item.latitude)">地址导航</button>
+							@click.stop="openLocation(item.longitude,item.latitude)">地址导航</button>
 						<view class="align-divide"></view>
-						<button class="u-reset-button btn" @click="handleCheckActiveDetail(item.id)">查看详情</button>
+						<button class="u-reset-button btn" @click.stop="handleCheckActiveDetail(item.id)">查看详情</button>
 						<view class="align-divide"></view>
 						<button class="u-reset-button btn" open-type="share"
-							@click="share(item.activity_name,item.id,item.cate_name)">活动分享</button>
+							@click.stop="share(item.activity_name,item.id,item.cate_name)">活动分享</button>
 					</view>
 					<!--活动状态-->
 					<view class="active-status">
@@ -135,7 +135,7 @@
 			</u-empty>
 		</view>
 
-		<official-account></official-account>
+		<official-account :class="{'mt-20':mineActives.length>0,ab:isFixed}"></official-account>
 		<u-back-top :scroll-top="scrollTop"></u-back-top>
 
 		<view class="footer-btn-box">
@@ -286,6 +286,11 @@
 				title: '快来！我们球场见',
 				path: `pages/index/index`,
 				imageUrl: 'https://img30.360buyimg.com/pop/jfs/t1/220029/19/15263/78063/62358776Ebb80152b/86d3b1ae5e07b584.png'
+			}
+		},
+		computed:{
+			isFixed(){
+				return	this.current===0&&this.mineActives.length <=0 ||this.current===1&&this.nearByActives.length <=0
 			}
 		},
 		methods: {
@@ -635,6 +640,7 @@
 					height: 70rpx;
 
 					.btn {
+						min-width: 225rpx;
 						height: 70rpx;
 						color: $u-primary;
 						font-size: 28rpx;
@@ -655,6 +661,16 @@
 				}
 
 			}
+		}
+
+		.ab{
+			position: absolute;
+			width:700rpx;
+			bottom: 120rpx;
+		}
+		
+		.mt-20{
+			margin-top: 20rpx;
 		}
 
 		.footer-btn-box {

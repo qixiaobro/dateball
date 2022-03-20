@@ -17932,6 +17932,28 @@ platform;exports.default = _default;
 
 /***/ }),
 /* 137 */
+/*!************************************************************************************************!*\
+  !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/libs/mixin/mpShare.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {module.exports = {
+  onLoad: function onLoad() {
+    // 设置默认的转发参数
+    uni.$u.mpShare = {
+      title: '', // 默认为小程序名称
+      path: '', // 默认为当前页面路径
+      imageUrl: '' // 默认为当前页面的截图
+    };
+  },
+  onShareAppMessage: function onShareAppMessage() {
+    return uni.$u.mpShare;
+  } };
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 138 */
 /*!**********************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/utils/request.js ***!
   \**********************************************************************/
@@ -17940,10 +17962,10 @@ platform;exports.default = _default;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {
-var _local = __webpack_require__(/*! @/utils/local.js */ 138);
+var _local = __webpack_require__(/*! @/utils/local.js */ 139);
 
 
-var _common = __webpack_require__(/*! @/utils/common.js */ 139);
+var _common = __webpack_require__(/*! @/utils/common.js */ 140);
 module.exports = function (vm) {
   // 初始化请求配置
   uni.$u.http.setConfig(function (config) {
@@ -17984,7 +18006,7 @@ module.exports = function (vm) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 138 */
+/* 139 */
 /*!********************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/utils/local.js ***!
   \********************************************************************/
@@ -18013,7 +18035,7 @@ var clearStorageSync = function clearStorageSync() {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 139 */
+/* 140 */
 /*!*********************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/utils/common.js ***!
   \*********************************************************************/
@@ -18021,13 +18043,13 @@ var clearStorageSync = function clearStorageSync() {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSwiper = exports.imgParse = exports.getHasUserInfo = exports.openLocation = exports.splitAddress = exports.transTime = exports.setLocaltion = exports.wxlogin = exports.BASE_URL = exports.MAP_KEY = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));var _login = __webpack_require__(/*! @/api/login.js */ 140);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSwiper = exports.imgParse = exports.getHasUserInfo = exports.openLocation = exports.splitAddress = exports.transTime = exports.setLocaltion = exports.wxlogin = exports.BASE_URL = exports.MAP_KEY = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));var _login = __webpack_require__(/*! @/api/login.js */ 141);
 
 
 
 
-var _common = __webpack_require__(/*! @/api/common.js */ 470);
-var _local = __webpack_require__(/*! @/utils/local.js */ 138);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+var _common = __webpack_require__(/*! @/api/common.js */ 142);
+var _local = __webpack_require__(/*! @/utils/local.js */ 139);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
 
 
 var MAP_KEY = '3FUBZ-TJECU-JAPV5-2GARY-35VDV-HKBLL';exports.MAP_KEY = MAP_KEY;
@@ -18226,7 +18248,7 @@ var getSwiper = /*#__PURE__*/function () {var _ref4 = _asyncToGenerator( /*#__PU
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 140 */
+/* 141 */
 /*!******************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/api/login.js ***!
   \******************************************************************/
@@ -18234,7 +18256,7 @@ var getSwiper = /*#__PURE__*/function () {var _ref4 = _asyncToGenerator( /*#__PU
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getWechatInfo = exports.authPhone = exports.authLogin = exports.silentLogin = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! @/utils/request.js */ 137));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getWechatInfo = exports.authPhone = exports.authLogin = exports.silentLogin = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! @/utils/request.js */ 138));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 var http = uni.$u.http;
 
 //静默登录
@@ -18252,11 +18274,26 @@ var getWechatInfo = function getWechatInfo(data) {return http.get('/api/wechat_i
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 141 */,
-/* 142 */,
+/* 142 */
+/*!*******************************************************************!*\
+  !*** /Users/uncode/Documents/HBuilderProjects/ball/api/common.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSwipers = void 0;var http = uni.$u.http;
+
+//获取首页轮播图
+var getSwipers = function getSwipers(data) {return http.get('/api/ball/index', data);};exports.getSwipers = getSwipers;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 143 */,
 /* 144 */,
-/* 145 */
+/* 145 */,
+/* 146 */,
+/* 147 */
 /*!*****************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/static/assets/icon/acitve-empty.png ***!
   \*****************************************************************************************/
@@ -18266,9 +18303,9 @@ var getWechatInfo = function getWechatInfo(data) {return http.get('/api/wechat_i
 module.exports = "data:image/png;base64,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QBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAQEAUFAEBAEBAFBQBAQBAQBQUAQEAR6FYH/D9s59mr01yO+AAAAAElFTkSuQmCC"
 
 /***/ }),
-/* 146 */,
-/* 147 */,
-/* 148 */
+/* 148 */,
+/* 149 */,
+/* 150 */
 /*!********************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/api/actives.js ***!
   \********************************************************************/
@@ -18307,7 +18344,7 @@ exports.quitActive = quitActive;var joinActive = function joinActive(params) {va
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 149 */
+/* 151 */
 /*!*****************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/utils/qqmap-wx-jssdk.js ***!
   \*****************************************************************************/
@@ -19438,8 +19475,6 @@ QQMapWX = /*#__PURE__*/function () {"use strict";
 module.exports = QQMapWX;
 
 /***/ }),
-/* 150 */,
-/* 151 */,
 /* 152 */,
 /* 153 */,
 /* 154 */,
@@ -19461,7 +19496,23 @@ module.exports = QQMapWX;
 /* 170 */,
 /* 171 */,
 /* 172 */,
-/* 173 */
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */
 /*!*****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \*****************************************************************************************************/
@@ -19684,7 +19735,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 174 */
+/* 190 */
 /*!*****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-icon/props.js ***!
   \*****************************************************************************************************/
@@ -19781,14 +19832,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */
 /*!*******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-swiper/props.js ***!
   \*******************************************************************************************************/
@@ -19921,14 +19972,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */
 /*!*******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-sticky/props.js ***!
   \*******************************************************************************************************/
@@ -19976,14 +20027,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */
 /*!***********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-subsection/props.js ***!
   \***********************************************************************************************************/
@@ -20040,14 +20091,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */
 /*!****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-tag/props.js ***!
   \****************************************************************************************************/
@@ -20139,14 +20190,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */
 /*!*********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-skeleton/props.js ***!
   \*********************************************************************************************************/
@@ -20213,14 +20264,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */
 /*!******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-empty/props.js ***!
   \******************************************************************************************************/
@@ -20287,14 +20338,83 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */
+/*!*********************************************************************************************************!*\
+  !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-back-top/props.js ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 返回顶部的形状，circle-圆形，square-方形
+    mode: {
+      type: String,
+      default: uni.$u.props.backtop.mode },
+
+    // 自定义图标
+    icon: {
+      type: String,
+      default: uni.$u.props.backtop.icon },
+
+    // 提示文字
+    text: {
+      type: String,
+      default: uni.$u.props.backtop.text },
+
+    // 返回顶部滚动时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.backtop.duration },
+
+    // 滚动距离
+    scrollTop: {
+      type: [String, Number],
+      default: uni.$u.props.backtop.scrollTop },
+
+    // 距离顶部多少距离显示，单位px
+    top: {
+      type: [String, Number],
+      default: uni.$u.props.backtop.top },
+
+    // 返回顶部按钮到底部的距离，单位px
+    bottom: {
+      type: [String, Number],
+      default: uni.$u.props.backtop.bottom },
+
+    // 返回顶部按钮到右边的距离，单位px
+    right: {
+      type: [String, Number],
+      default: uni.$u.props.backtop.right },
+
+    // 层级
+    zIndex: {
+      type: [String, Number],
+      default: uni.$u.props.backtop.zIndex },
+
+    // 图标的样式，对象形式
+    iconStyle: {
+      type: Object,
+      default: uni.$u.props.backtop.iconStyle } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */
 /*!******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-modal/props.js ***!
   \******************************************************************************************************/
@@ -20386,14 +20506,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */
 /*!*****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-form/props.js ***!
   \*****************************************************************************************************/
@@ -20446,12 +20566,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */
 /*!**********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-form-item/props.js ***!
   \**********************************************************************************************************/
@@ -20502,14 +20622,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */
 /*!******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-input/props.js ***!
   \******************************************************************************************************/
@@ -20699,12 +20819,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */
 /*!*******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-switch/props.js ***!
   \*******************************************************************************************************/
@@ -20766,14 +20886,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */
 /*!*********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-textarea/props.js ***!
   \*********************************************************************************************************/
@@ -20895,12 +21015,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */
 /*!*******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-picker/props.js ***!
   \*******************************************************************************************************/
@@ -20992,14 +21112,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */
 /*!****************************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-datetime-picker/props.js ***!
   \****************************************************************************************************************/
@@ -21123,7 +21243,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 281 */
+/* 305 */
 /*!*********************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/libs/util/dayjs.js ***!
   \*********************************************************************************************/
@@ -21439,14 +21559,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 });
 
 /***/ }),
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */
 /*!********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-divider/props.js ***!
   \********************************************************************************************************/
@@ -21498,14 +21618,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */
 /*!*******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-avatar/props.js ***!
   \*******************************************************************************************************/
@@ -21591,14 +21711,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */
 /*!***********************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/libs/mixin/button.js ***!
   \***********************************************************************************************/
@@ -21619,7 +21739,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     openType: String } };exports.default = _default;
 
 /***/ }),
-/* 306 */
+/* 330 */
 /*!*************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/libs/mixin/openType.js ***!
   \*************************************************************************************************/
@@ -21652,7 +21772,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 307 */
+/* 331 */
 /*!*******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-button/props.js ***!
   \*******************************************************************************************************/
@@ -21821,14 +21941,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */
 /*!*************************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \*************************************************************************************************************/
@@ -21895,14 +22015,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */
 /*!*****************************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
   \*****************************************************************************************************************/
@@ -21939,14 +22059,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */
 /*!***********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-transition/props.js ***!
   \***********************************************************************************************************/
@@ -21978,7 +22098,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 332 */
+/* 356 */
 /*!****************************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \****************************************************************************************************************/
@@ -21989,7 +22109,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 333));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 357));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -22141,7 +22261,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 333 */
+/* 357 */
 /*!******************************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \******************************************************************************************************************/
@@ -22217,14 +22337,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */
 /*!******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-popup/props.js ***!
   \******************************************************************************************************/
@@ -22311,14 +22431,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */
 /*!*****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-line/props.js ***!
   \*****************************************************************************************************/
@@ -22359,14 +22479,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */
 /*!*******************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/libs/util/async-validator.js ***!
   \*******************************************************************************************************/
@@ -23718,10 +23838,10 @@ Schema.messages = messages;var _default =
 Schema;
 // # sourceMappingURL=index.js.map
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 358)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 382)))
 
 /***/ }),
-/* 358 */
+/* 382 */
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -23752,7 +23872,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 359);
+        if (!path) path = __webpack_require__(/*! path */ 383);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -23765,7 +23885,7 @@ exports.features = {};
 
 
 /***/ }),
-/* 359 */
+/* 383 */
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -24075,29 +24195,29 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 358)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 382)))
 
 /***/ }),
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */
 /*!********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-toolbar/props.js ***!
   \********************************************************************************************************/
@@ -24139,14 +24259,14 @@ var substr = 'ab'.substr(-1) === 'b'
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */
 /*!*****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-text/props.js ***!
   \*****************************************************************************************************/
@@ -24264,12 +24384,12 @@ var substr = 'ab'.substr(-1) === 'b'
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */
 /*!********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-overlay/props.js ***!
   \********************************************************************************************************/
@@ -24301,14 +24421,14 @@ var substr = 'ab'.substr(-1) === 'b'
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */
 /*!***********************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \***********************************************************************************************************/
@@ -24324,14 +24444,14 @@ var substr = 'ab'.substr(-1) === 'b'
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */
 /*!************************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
   \************************************************************************************************************/
@@ -24343,14 +24463,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   props: {} };exports.default = _default;
 
 /***/ }),
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */
 /*!*****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-text/value.js ***!
   \*****************************************************************************************************/
@@ -24444,14 +24564,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */
 /*!*****************************************************************************************************!*\
   !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-link/props.js ***!
   \*****************************************************************************************************/
@@ -24495,159 +24615,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     text: {
       type: String,
       default: uni.$u.props.link.text } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */,
-/* 445 */,
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */,
-/* 452 */,
-/* 453 */,
-/* 454 */,
-/* 455 */,
-/* 456 */,
-/* 457 */,
-/* 458 */,
-/* 459 */,
-/* 460 */,
-/* 461 */,
-/* 462 */,
-/* 463 */,
-/* 464 */,
-/* 465 */,
-/* 466 */,
-/* 467 */,
-/* 468 */,
-/* 469 */
-/*!************************************************************************************************!*\
-  !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/libs/mixin/mpShare.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(uni) {module.exports = {
-  onLoad: function onLoad() {
-    // 设置默认的转发参数
-    uni.$u.mpShare = {
-      title: '', // 默认为小程序名称
-      path: '', // 默认为当前页面路径
-      imageUrl: '' // 默认为当前页面的截图
-    };
-  },
-  onShareAppMessage: function onShareAppMessage() {
-    return uni.$u.mpShare;
-  } };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 470 */
-/*!*******************************************************************!*\
-  !*** /Users/uncode/Documents/HBuilderProjects/ball/api/common.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSwipers = void 0;var http = uni.$u.http;
-
-//获取首页轮播图
-var getSwipers = function getSwipers(data) {return http.get('/api/ball/index', data);};exports.getSwipers = getSwipers;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 471 */,
-/* 472 */,
-/* 473 */,
-/* 474 */,
-/* 475 */,
-/* 476 */,
-/* 477 */,
-/* 478 */,
-/* 479 */,
-/* 480 */,
-/* 481 */,
-/* 482 */
-/*!*********************************************************************************************************!*\
-  !*** /Users/uncode/Documents/HBuilderProjects/ball/uni_modules/uview-ui/components/u-back-top/props.js ***!
-  \*********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 返回顶部的形状，circle-圆形，square-方形
-    mode: {
-      type: String,
-      default: uni.$u.props.backtop.mode },
-
-    // 自定义图标
-    icon: {
-      type: String,
-      default: uni.$u.props.backtop.icon },
-
-    // 提示文字
-    text: {
-      type: String,
-      default: uni.$u.props.backtop.text },
-
-    // 返回顶部滚动时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.backtop.duration },
-
-    // 滚动距离
-    scrollTop: {
-      type: [String, Number],
-      default: uni.$u.props.backtop.scrollTop },
-
-    // 距离顶部多少距离显示，单位px
-    top: {
-      type: [String, Number],
-      default: uni.$u.props.backtop.top },
-
-    // 返回顶部按钮到底部的距离，单位px
-    bottom: {
-      type: [String, Number],
-      default: uni.$u.props.backtop.bottom },
-
-    // 返回顶部按钮到右边的距离，单位px
-    right: {
-      type: [String, Number],
-      default: uni.$u.props.backtop.right },
-
-    // 层级
-    zIndex: {
-      type: [String, Number],
-      default: uni.$u.props.backtop.zIndex },
-
-    // 图标的样式，对象形式
-    iconStyle: {
-      type: Object,
-      default: uni.$u.props.backtop.iconStyle } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })

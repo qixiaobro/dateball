@@ -52,7 +52,7 @@
 						<u-avatar :src="item.avatar" shape="circle"></u-avatar>
 						<view class="join-people-info">
 							<view class="join-name">{{item.nickname}} <span style="margin-left: 20rpx;"
-									v-if="activityDetail.is_create===1&&item.status===1">{{item.phone}}</span></view>
+									v-if="activityDetail.is_create===1&&item.status===1&&index!==0">{{item.phone}}</span></view>
 							<view class="join-time">{{transTime(true,item.add_time*1000)}}</view>
 						</view>
 						<view class="join-status create" v-if="item.is_create===1">

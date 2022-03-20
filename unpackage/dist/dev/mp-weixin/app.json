@@ -1,28 +1,29 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/createActive/createActive",
-    "pages/activeDetail/activeDetail",
-    "pages/authPage/authPage",
-    "pages/link/link"
-  ],
-  "subPackages": [],
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "球场见",
-    "navigationBarBackgroundColor": "#f3f4f6",
-    "backgroundColor": "#f3f4f6"
-  },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "球场见需使用您的定位信息查找附近的球场~"
-    }
-  },
-  "plugins": {
-    "chooseLocation": {
-      "version": "1.0.9",
-      "provider": "wx76a9a06e5b4e693e"
-    }
-  },
-  "usingComponents": {}
+    "pages": [
+        "pages/index/index",
+        "pages/createActive/createActive",
+        "pages/activeDetail/activeDetail",
+        "pages/authPage/authPage",
+        "pages/link/link"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "球场见",
+        "navigationBarBackgroundColor": "#f3f4f6",
+        "backgroundColor": "#f3f4f6"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "球场见需使用您的定位信息查找附近的球场~"
+        }
+    },
+    "plugins": {
+        "chooseLocation": {
+            "version": "1.0.9",
+            "provider": "wx76a9a06e5b4e693e"
+        }
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
 }

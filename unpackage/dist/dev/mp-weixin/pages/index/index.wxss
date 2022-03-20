@@ -129,6 +129,7 @@
   height: 70rpx;
 }
 .page-index-wrap .active-list-box .active-card .control-box .btn.data-v-57280228 {
+  min-width: 225rpx;
   height: 70rpx;
   color: #3c9cff;
   font-size: 28rpx;
@@ -143,6 +144,14 @@
   position: absolute !important;
   right: 25rpx !important;
   top: 10rpx !important;
+}
+.page-index-wrap .ab.data-v-57280228 {
+  position: absolute;
+  width: 700rpx;
+  bottom: 120rpx;
+}
+.page-index-wrap .mt-20.data-v-57280228 {
+  margin-top: 20rpx;
 }
 .page-index-wrap .footer-btn-box.data-v-57280228 {
   width: 700rpx;
